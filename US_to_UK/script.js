@@ -54,7 +54,7 @@ function convertToUkEnglish() {
     });
 
     // Display the converted UK English text
-    document.getElementById('uk_text').innerHTML = uk_text;
+    document.getElementById('uk_text').innerHTML = uk_text.toLowerCase();
 }
 
 // Attach event listener to trigger conversion on input change
