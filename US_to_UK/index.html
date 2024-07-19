@@ -10,19 +10,20 @@
     <body>
         <section class="converter">
         <h2>US to UK English Converter</h2>
-        <form action="#">
+      
         <label for="us_text">Enter US English text:</label><br>
         <textarea id="us_text" name="us_text" rows="4" cols="50"></textarea><br><br>
-    </form>
+
     
         <h3>Converted UK English:</h3>
-        <div >
+        <div id = "ukMain">
             <p>
                 <pre id="uk_text">
 
                 </pre>
 
             </p>
+            <button type="button" onclick="copyText('uk_text')">Copy Uk Text</button>
         </div>
     </section>
         <script src="script.js"></script>

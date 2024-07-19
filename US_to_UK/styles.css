@@ -1,4 +1,5 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -7,22 +8,26 @@ body {
     background-color: rgb(214, 213, 213);
 }
 section {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     margin: 50px auto;
     width: 400px;
     max-width: 80%;
-    height: 550px;
+    min-height: 550px;
     background-color: rgb(98, 133, 59);
     padding: 30px;
     align-items: center;
     border-radius: 10px;
     color: #f0f8ff;
+    
 }
 h2,h3 {
     text-align: center;
     margin: 10px 5px;
     text-decoration: underline;
     text-decoration-color: black;
-    text-underline-offset:7px ;
+    text-underline-offset:10px ;
     
 }
 textarea {
@@ -38,17 +43,38 @@ textarea {
 form {
     margin-top: 50px;
 }
+#ukMain,p {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 #uk_text {
+    display: flex;
+    flex-direction: column;
+    
     background-color: rgb(196, 199, 199);
     border-radius: 5px;
     /* height: 5em; */
-    max-height: 15em;
+    min-height: 200px;
     color:black;
     font-family:Georgia, 'Times New Roman', Times, serif;
     padding: 10px;
     width: 100%;
-    overflow-y:auto;
+    scroll-timeline-axis: horizontal ;
+    /* overflow-y:auto; */
     white-space: pre-wrap;
     word-wrap: break-word;
-}
     
+}
+button {
+    /* width: 80px; */
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    height: 30px;
+    background-color:rgb(196, 199, 199) ;
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 5px;
+
+}    

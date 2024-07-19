@@ -59,3 +59,47 @@ function convertToUkEnglish() {
 
 // Attach event listener to trigger conversion on input change
 document.getElementById('us_text').addEventListener('input', convertToUkEnglish);
+
+function copyText(uk_text, successCallback = null, errorCallback = null) {
+    // Get the element with the specified ID
+    const element = document.getElementById(uk_text);
+  
+    // Check if the element exists
+    if (uk_text) {
+      // Create a temporary element to hold the text
+      const tempElement = document.createElement('textarea');
+      tempElement.value = element.textContent;
+  
+      // Append the temporary element to the body (off-screen)
+      document.body.appendChild(tempElement);
+  
+      // Select the text content
+      tempElement.select();
+  
+      try {
+        // Use the Clipboard API to copy the text
+        const successful = navigator.clipboard.writeText(tempElement.value);
+  
+        if (successful && successCallback) {
+          successCallback(); // Call the success callback function (if provided)
+        } else if (!successful && errorCallback) {
+          errorCallback(); // Call the error callback function (if provided)
+        } else if (successful) {
+          console.log('Text copied successfully!'); // Default success message
+        }
+      } catch (err) {
+        console.error('Failed to copy text:', err);
+        if (errorCallback) {
+          errorCallback(err); // Call the error callback function with error (if provided)
+        } else {
+          alert('Failed to copy text!'); // Default error message
+        }
+      }
+  
+      // Remove the temporary element
+      document.body.removeChild(tempElement);
+    } else {
+      console.error('Element with id "' + uk_text + '" not found.');
+    }
+  }
+  
