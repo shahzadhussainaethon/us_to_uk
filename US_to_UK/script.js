@@ -31,7 +31,7 @@ var us_to_uk = {
     'characterize':'characterise',
     'mobilize':'mobilise',
     'prioritize':'prioritise',
-  
+    'capitalization' : 'capitalisation'
     // Specific cases
     'check': 'cheque', // check (US) vs cheque (UK)
   
